@@ -60,8 +60,12 @@ export default function Home() {
       <div className="content_wrapper">
         <div className="left_content_wrapper">
           <h2>
-            <span>Формы для проведения</span>
-            <span>социологических опросов</span>
+            <span>
+              Формы <span className="second"> для проведения</span>
+            </span>
+            <span>
+              социологических <span className="second">опросов</span>{" "}
+            </span>
           </h2>
           <p>
             Создавайте опросы с гибкой системой опросов <br /> и загружайте их в
@@ -121,7 +125,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Card/>
+      <Card />
     </>
   );
 }
