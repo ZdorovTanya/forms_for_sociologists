@@ -10,19 +10,92 @@ import {
   IoColorFill,
 } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { motion } from "framer-motion";
+
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+const container = {
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.2,
+    },
+  },
+};
+
+const title = {
+  hidden: {
+    y: 60,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
+
+const hoverEffect = {
+  whileHover: {
+    scale: 1.5,
+    rotate: 630,
+    borderRadius: "100%",
+  },
+  whileTap: {
+    scale: 8,
+    rotate: 630,
+    borderRadius: "100%",
+  },
+};
 
 export default function Card() {
   return (
-    <div className="service_container">
+    <motion.div className="service_container">
       <div className="title_wrapper">
-        <span className="service_title">Наши возможности</span>
-        <h2>
+        <motion.span
+          className="service_title"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 20, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, delay: 1.8 }}
+        >
+          Наши возможности
+        </motion.span>
+        <motion.h2
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 20, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
           Экономьте ваше время и <br /> нервы с помощью нашего сервиса
-        </h2>
+        </motion.h2>
       </div>
-      <div className="service_card">
-        <div className="card">
-          <span className="service_icon" style={{ backgroundColor: "ddfbf9" }}>
+
+      <motion.div
+        className="service_card"
+        variants={container}
+        initial="hidden"
+        exit="exit"
+        whileInView="show"
+        viewport={{ once: false }}
+      >
+        <motion.div className="card" variants={item}>
+          <motion.span className="service_icon" style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
             <IconContext.Provider
               value={{
                 color: "#14da8f",
@@ -31,7 +104,10 @@ export default function Card() {
             >
               <IoMailOutline />
             </IconContext.Provider>
-          </span>
+          </motion.span>
+          <h3>
+            Гибкая система <br /> настроек
+          </h3>
           <a href="#">
             <span>Learn more</span>
             <IconContext.Provider
@@ -43,8 +119,43 @@ export default function Card() {
               <IoChevronForward />
             </IconContext.Provider>
           </a>
+        </motion.div>
+
+        <div className="card dark">
+          <img
+            src={process.env.PUBLIC_URL + "/images/line.png"}
+            alt="line"
+            className="line"
+          />
+          <h2>
+            +4 <br /> больше...
+          </h2>
+          <a href="#">
+            <span>View more...</span>
+            <span
+              className="service_icon"
+              style={{ backgroundColor: "ddfbf9" }}
+            >
+              <IconContext.Provider
+                value={{
+                  color: "#fff",
+                  size: "18px",
+                }}
+              >
+                <IoMailOutline />
+              </IconContext.Provider>
+            </span>
+            <IconContext.Provider
+              value={{
+                color: "#fff",
+                size: "18px",
+              }}
+            >
+              <IoChevronForward />
+            </IconContext.Provider>
+          </a>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
