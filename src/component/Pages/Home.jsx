@@ -10,7 +10,7 @@ import {
 import { IconContext } from "react-icons";
 import Card from "./Card";
 import { animate, motion } from "framer-motion";
-import Registration from "./Registration";
+import Registration from "./Registration/Registration";
 // для картинок https://github.com/react-icons/react-icons
 // npm i node-sass
 // для анимации npm i framer-motion
@@ -262,7 +262,7 @@ export default function Home() {
           </motion.p>
 
           <motion.div className="btn_group" variants={stagger}>
-            <NavLink to="/registration">
+            <NavLink to="/login">
               <motion.div
                 className="btn btn_primary"
                 variants={btnGroup}
