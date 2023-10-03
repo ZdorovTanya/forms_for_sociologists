@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Home.scss";
 import { FaBehance, FaDribbble } from "react-icons/fa";
 import {
@@ -9,6 +10,7 @@ import {
 import { IconContext } from "react-icons";
 import Card from "./Card";
 import { animate, motion } from "framer-motion";
+import Registration from "./Registration";
 // для картинок https://github.com/react-icons/react-icons
 // npm i node-sass
 // для анимации npm i framer-motion
@@ -258,23 +260,27 @@ export default function Home() {
             Создавайте опросы с гибкой системой опросов <br /> и загружайте их в
             удобном вам формате.
           </motion.p>
+
           <motion.div className="btn_group" variants={stagger}>
-            <motion.div
-              className="btn btn_primary"
-              variants={btnGroup}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Зарегестрироваться
-              <IconContext.Provider
-                value={{
-                  color: "#14da8f",
-                  size: "25px",
-                }}
+            <NavLink to="/registration">
+              <motion.div
+                className="btn btn_primary"
+                variants={btnGroup}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <IoChevronForwardCircle />
-              </IconContext.Provider>
-            </motion.div>
+                Зарегестрироваться
+                <IconContext.Provider
+                  value={{
+                    color: "#14da8f",
+                    size: "25px",
+                  }}
+                >
+                  <IoChevronForwardCircle />
+                </IconContext.Provider>
+              </motion.div>
+            </NavLink>
+
             <motion.div
               className="btn btn_secondary"
               variants={btnGroup}
@@ -294,19 +300,59 @@ export default function Home() {
                   size: "18px",
                 }}
               >
-                <motion.span variants={star} whileHover={{scale:1.2, rotate:180, borderRadius:'100%',cursor:'pointer'}}>
+                <motion.span
+                  variants={star}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 180,
+                    borderRadius: "100%",
+                    cursor: "pointer",
+                  }}
+                >
                   <IoStar />
                 </motion.span>
-                <motion.span variants={star} whileHover={{scale:1.2, rotate:180, borderRadius:'100%',cursor:'pointer'}}>
+                <motion.span
+                  variants={star}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 180,
+                    borderRadius: "100%",
+                    cursor: "pointer",
+                  }}
+                >
                   <IoStar />
                 </motion.span>
-                <motion.span variants={star} whileHover={{scale:1.2, rotate:180, borderRadius:'100%',cursor:'pointer'}}>
+                <motion.span
+                  variants={star}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 180,
+                    borderRadius: "100%",
+                    cursor: "pointer",
+                  }}
+                >
                   <IoStar />
                 </motion.span>
-                <motion.span variants={star} whileHover={{scale:1.2, rotate:180, borderRadius:'100%',cursor:'pointer'}}>
+                <motion.span
+                  variants={star}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 180,
+                    borderRadius: "100%",
+                    cursor: "pointer",
+                  }}
+                >
                   <IoStar />
                 </motion.span>
-                <motion.span variants={star} whileHover={{scale:1.2, rotate:180, borderRadius:'100%',cursor:'pointer'}}>
+                <motion.span
+                  variants={star}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 180,
+                    borderRadius: "100%",
+                    cursor: "pointer",
+                  }}
+                >
                   <IoStar />
                 </motion.span>
               </IconContext.Provider>
@@ -323,9 +369,9 @@ export default function Home() {
             height={500}
             src={process.env.PUBLIC_URL + "/images/main_picture.jpg"}
             alt="главная картинка"
-            initial={{x:200, opacity:0}}
-            animate={{x:0, opacity:1}}
-            transition={{duration:.5, delay:0.8}}
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
           />
         </motion.div>
       </motion.div>
