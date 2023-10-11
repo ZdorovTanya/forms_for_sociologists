@@ -286,7 +286,7 @@ export default function Home() {
           <motion.div className="btn_group" variants={stagger}>
             <NavLink
               style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/login"
+              to="/signInUp"
             >
               <motion.div
                 className="btn btn_primary"
