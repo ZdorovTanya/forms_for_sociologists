@@ -136,13 +136,15 @@ header {
       @extend .dflex;
       width: 70%;
       justify-content: space-between;
+      gap: 20px;
       .btn {
         @extend .dflex;
-        width: 48%;
+        /* width: 48%; */
         height: 56px;
         font-size: 20px;
         border-radius: 8px;
         font-weight: 600;
+        padding: 5px;
         &.btn_primary {
           background-color: $black;
           color: $white;
@@ -154,12 +156,15 @@ header {
           background-color: $white;
           color: $black;
           border: 1px solid $black;
+          text-align: center;
         }
       }
     }
     .review_container {
       margin-top: 50px;
       p.total_review {
+        display: flex;
+        flex-direction: column;
         font-weight: 600;
         font-size: 20px;
         color: $black;
@@ -195,14 +200,14 @@ header {
     }
   }
 }
-
+ 
 /* service_container */
 .service_container{
     display: block;
     width: 80%;
     margin: 80px auto 0 auto;
     .title_wrapper{
-        overflow: hidden;
+        /* overflow: hidden; */
         .service_title{
             display: block;
             text-align: center;

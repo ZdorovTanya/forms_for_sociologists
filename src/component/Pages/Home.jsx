@@ -162,23 +162,30 @@ export default function Home() {
               </div>
             </IconContext.Provider>
           </motion.span>
+
           <motion.span variants={header}>
-            <IconContext.Provider
-              value={{
-                color: "#000",
-                size: "18px",
-              }}
+            <NavLink
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              to="/user"
             >
-              <div className="icon">
-                <IoMailOpenOutline />
-                user@hismail.com
-              </div>
-            </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  color: "#000",
+                  size: "18px",
+                }}
+              >
+                <div className="icon">
+                  <IoMailOpenOutline />
+                  пользователь
+                </div>
+              </IconContext.Provider>
+            </NavLink>
           </motion.span>
+
           <motion.span className="menu" variants={header}>
-            <span></span>
-            <span></span>
-            <span></span>
+            {/* <span></span> */}
+            {/* <span></span> */}
+            {/* <span></span> */}
           </motion.span>
         </motion.div>
       </motion.header>
@@ -226,8 +233,15 @@ export default function Home() {
               <motion.span variants={letter}>н</motion.span>
               <motion.span variants={letter}>и</motion.span>
               <motion.span variants={letter}>я</motion.span>
+            </motion.span>
 
-              <motion.span variants={letter} className="second">
+            <motion.span
+              variants={lastName}
+              initial="initial"
+              animate="animate"
+              className="first"
+            >
+              <motion.span variants={letter} className="">
                 с
               </motion.span>
               <motion.span variants={letter}>о</motion.span>
@@ -244,8 +258,15 @@ export default function Home() {
               <motion.span variants={letter}>к</motion.span>
               <motion.span variants={letter}>и</motion.span>
               <motion.span variants={letter}>х</motion.span>
+            </motion.span>
 
-              <motion.span variants={letter} className="second">
+            <motion.span
+              variants={lastName}
+              initial="initial"
+              animate="animate"
+              className="last"
+            >
+              <motion.span variants={letter} className="">
                 о
               </motion.span>
               <motion.span variants={letter}>п</motion.span>
@@ -256,13 +277,17 @@ export default function Home() {
               <motion.span variants={letter}>в</motion.span>
             </motion.span>
           </motion.h2>
+
           <motion.p variants={fadeInUp}>
             Создавайте опросы с гибкой системой опросов <br /> и загружайте их в
             удобном вам формате.
           </motion.p>
 
           <motion.div className="btn_group" variants={stagger}>
-            <NavLink to="/login">
+            <NavLink
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              to="/login"
+            >
               <motion.div
                 className="btn btn_primary"
                 variants={btnGroup}
@@ -294,68 +319,70 @@ export default function Home() {
           <motion.div className="review_container" variants={stagger}>
             <motion.p className="total_review" variants={stagger}>
               50+ Отзывов
-              <IconContext.Provider
-                value={{
-                  color: "#fff",
-                  size: "18px",
-                }}
-              >
-                <motion.span
-                  variants={star}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 180,
-                    borderRadius: "100%",
-                    cursor: "pointer",
+              <star>
+                <IconContext.Provider
+                  value={{
+                    color: "#fff",
+                    size: "18px",
                   }}
                 >
-                  <IoStar />
-                </motion.span>
-                <motion.span
-                  variants={star}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 180,
-                    borderRadius: "100%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoStar />
-                </motion.span>
-                <motion.span
-                  variants={star}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 180,
-                    borderRadius: "100%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoStar />
-                </motion.span>
-                <motion.span
-                  variants={star}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 180,
-                    borderRadius: "100%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoStar />
-                </motion.span>
-                <motion.span
-                  variants={star}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 180,
-                    borderRadius: "100%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoStar />
-                </motion.span>
-              </IconContext.Provider>
+                  <motion.span
+                    variants={star}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      borderRadius: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <IoStar />
+                  </motion.span>
+                  <motion.span
+                    variants={star}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      borderRadius: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <IoStar />
+                  </motion.span>
+                  <motion.span
+                    variants={star}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      borderRadius: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <IoStar />
+                  </motion.span>
+                  <motion.span
+                    variants={star}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      borderRadius: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <IoStar />
+                  </motion.span>
+                  <motion.span
+                    variants={star}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      borderRadius: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <IoStar />
+                  </motion.span>
+                </IconContext.Provider>
+              </star>
               <motion.p className="more_review" variants={star}>
                 Более 50 пользователей пользуются нашим сервисом
               </motion.p>
