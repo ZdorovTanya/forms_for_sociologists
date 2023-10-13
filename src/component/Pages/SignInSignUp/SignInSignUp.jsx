@@ -42,7 +42,7 @@ export default function SignInSignUp() {
           </form>
 
           <form action="#" className={styles.SignUpForm}>
-            <h2 className={styles.title}>Зарегестрируйтесь</h2>
+            <h2 className={styles.title}>Регистрация</h2>
             <div className={styles.inputField}>
               <i className={styles.FaUser}></i>
               <input
@@ -75,8 +75,8 @@ export default function SignInSignUp() {
           </form>
         </div>
         <div className={styles.panelContainer}>
-          <div className={styles.panel}>
-            <div className={styles.leftPanel}>
+          <div className={`${styles.panel} ${styles.leftPanel}`}>
+            {/* <div className={styles.leftPanel}> */}
               <div className={styles.content}>
                 <h3 className={styles.panelTitle}>Уже зарегистрированны?</h3>
                 <p className={styles.panelText}>
@@ -96,10 +96,10 @@ export default function SignInSignUp() {
                 className={styles.image}
                 alt=""
               />
-            </div>
+            {/* </div> */}
           </div>
-          <div className={styles.panel}>
-            <div className={styles.rightPanel}>
+          <div className={`${styles.panel} ${styles.rightPanel}`}>
+            {/* <div className={styles.rightPanel}> */}
               <div className={styles.content}>
                 <h3 className={styles.panelTitle}>Не зарегистрированны?</h3>
                 <p className={styles.panelText}>
@@ -119,7 +119,7 @@ export default function SignInSignUp() {
                 className={styles.image}
                 alt=""
               />
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>

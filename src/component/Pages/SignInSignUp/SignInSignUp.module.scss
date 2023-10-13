@@ -98,21 +98,6 @@ body {
             color: $dark_grey;
           }
         }
-        .btn {
-          width: 150px;
-          height: 50px;
-          border: none;
-          border-radius: 50px;
-          background-color: $dark_green;
-          color: $white;
-          font-weight: 600;
-          margin: 10px 0;
-          text-transform: uppercase;
-          cursor: pointer;
-        }
-        .btn:hover {
-          background-color: $dark_grey;
-        }
         .socialText {
           margin: 10px 0;
           font-size: 16px;
@@ -137,6 +122,26 @@ body {
     }
   }
 
+  /* btn */
+
+  .btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: $dark_green;
+    color: $white;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: $dark_grey;
+  }
+
+  /* panel */
+
   .panelContainer {
     position: absolute;
     top: 0;
@@ -157,8 +162,11 @@ body {
     padding: 0 10px;
     z-index: 6;
     text-align: center;
+
     .content {
       color: $dark_grey;
+      transition: 1.1s ease-in-out;
+      transition-delay: 0.5s;
     }
     .panelTitle {
       font-size: 24px;
@@ -170,10 +178,70 @@ body {
     }
     .image {
       width: 100%;
+      transition: 1.1s ease-in-out;
+      transition-delay: 0.4s;
     }
   }
+
 }
+
+.leftPanel .content,
+.leftPanel .image {
+  transform: translateX(-200%);
+}
+
+.rightPanel .content,
+.rightPanel .image {
+  transform: translateX(0);
+}
+/* Animation */
 
 .container.signUpMode::before {
   transform: translateX(0);
 }
+
+.container.signUpMode .rightPanel .image,
+.container.signUpMode .rightPanel .content {
+  transform: translateX(200%);
+}
+
+.container.signUpMode .leftPanel .image,
+.container.signUpMode .leftPanel .content {
+  transform: translateX(0);
+}
+
+.SignInForm {
+  opacity: 1;
+  transition: 0.5s ease-in-out 1s;
+}
+
+.SignUpForm {
+  opacity: 0;
+  transition: 0.5s ease-in-out 1s;
+}
+
+.container.signUpMode form.SignInForm {
+  opacity: 0;
+}
+
+.container.signUpMode form.SignUpForm {
+  opacity: 1;
+}
+
+/* click */
+
+.leftPanel{
+  pointer-events: none;
+}
+
+.container.signUpMode .rightPanel{
+  pointer-events: none;
+}
+
+.container.signUpMode .leftPanel{
+  pointer-events: all;
+}
+
+
+/* responsive */
+
