@@ -3,17 +3,24 @@ import styles from "./SignInSignUp.module.scss";
 
 export default function SignInSignUp() {
   const [btnState, setBtnState] = useState(false);
+  const [btnState2, setBtnState2] = useState(false);
 
   function handleClick() {
     setBtnState((btnState) => !btnState);
   }
 
-//   let toggleClassCheck = btnState ? "signUpMode" : " ";
+  function handleClick2() {
+    setBtnState2((btnState2) => !btnState2);
+  }
+
 
   return (
     <div className={styles.wrapper}>
-      <div className={`${styles.container} ${btnState ? styles.signUpMode : ""}`}>
-      {/* <div className={styles.container}> */}
+      <div
+        className={`${styles.container} ${btnState ? styles.signUpMode : ""} 
+        ${btnState2 ? styles.signUpMode2 : "" }
+        `}
+      >
         <div className={styles.SigninSignup}>
           <form action="#" className={styles.SignInForm}>
             <h2 className={styles.title}>Войти</h2>
@@ -39,6 +46,12 @@ export default function SignInSignUp() {
               {/* <a href="#" className={styles.socialIcon}></a> */}
               тут могут быть иконки соцсетей
             </div>
+            <p className={styles.accountText}>
+              Нет аккаунта?
+              <a href="#" onClick={handleClick2} className={styles.signUpBtn2}>
+                Sign up
+              </a>
+            </p>
           </form>
 
           <form action="#" className={styles.SignUpForm}>
@@ -72,54 +85,56 @@ export default function SignInSignUp() {
             <div className={styles.socialMedia}>
               тут могут быть иконки соцсетей
             </div>
+            <p className={styles.accountText}>
+              Есть аккаунт?
+              <a href="#" onClick={handleClick2} className={styles.signInBtn2}>
+                Sign in
+              </a>
+            </p>
           </form>
         </div>
         <div className={styles.panelContainer}>
           <div className={`${styles.panel} ${styles.leftPanel}`}>
-            {/* <div className={styles.leftPanel}> */}
-              <div className={styles.content}>
-                <h3 className={styles.panelTitle}>Уже зарегистрированны?</h3>
-                <p className={styles.panelText}>
-                  Уважаю, братан. Так ты это, заходи если чо, щас анимация будет
-                  крутая
-                </p>
-                <button
-                  onClick={handleClick}
-                  id="sigInBtn"
-                  className={styles.btn}
-                >
-                  Войти
-                </button>
-              </div>
-              <img
-                src="/images/main_picture.jpg"
-                className={styles.image}
-                alt=""
-              />
-            {/* </div> */}
+            <div className={styles.content}>
+              <h3 className={styles.panelTitle}>Уже зарегистрированны?</h3>
+              <p className={styles.panelText}>
+                Уважаю, братан. Так ты это, заходи если чо, щас анимация будет
+                крутая
+              </p>
+              <button
+                onClick={handleClick}
+                id="sigInBtn"
+                className={styles.btn}
+              >
+                Войти
+              </button>
+            </div>
+            <img
+              src="/images/main_picture.jpg"
+              className={styles.image}
+              alt=""
+            />
           </div>
           <div className={`${styles.panel} ${styles.rightPanel}`}>
-            {/* <div className={styles.rightPanel}> */}
-              <div className={styles.content}>
-                <h3 className={styles.panelTitle}>Не зарегистрированны?</h3>
-                <p className={styles.panelText}>
-                  Не уважаю, братан. Так ты это, заходи если чо, щас анимация
-                  будет крутая
-                </p>
-                <button
-                  onClick={handleClick}
-                  id="signUpBtn"
-                  className={styles.btn}
-                >
-                  Зарегитрироваться
-                </button>
-              </div>
-              <img
-                src="/images/main_picture.jpg"
-                className={styles.image}
-                alt=""
-              />
-            {/* </div> */}
+            <div className={styles.content}>
+              <h3 className={styles.panelTitle}>Не зарегистрированны?</h3>
+              <p className={styles.panelText}>
+                Не уважаю, братан. Так ты это, заходи если чо, щас анимация
+                будет крутая
+              </p>
+              <button
+                onClick={handleClick}
+                id="signUpBtn"
+                className={styles.btn}
+              >
+                Зарегитрироваться
+              </button>
+            </div>
+            <img
+              src="/images/main_picture.jpg"
+              className={styles.image}
+              alt=""
+            />
           </div>
         </div>
       </div>

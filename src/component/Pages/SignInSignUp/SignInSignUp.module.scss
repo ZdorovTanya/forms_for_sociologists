@@ -118,6 +118,9 @@ body {
             border-color: $dark_green;
           }
         }
+        .accountText {
+          display: none;
+        }
       }
     }
   }
@@ -182,7 +185,6 @@ body {
       transition-delay: 0.4s;
     }
   }
-
 }
 
 .leftPanel .content,
@@ -230,18 +232,57 @@ body {
 
 /* click */
 
-.leftPanel{
+.leftPanel {
   pointer-events: none;
 }
 
-.container.signUpMode .rightPanel{
+.container.signUpMode .rightPanel {
   pointer-events: none;
 }
 
-.container.signUpMode .leftPanel{
+.container.signUpMode .leftPanel {
   pointer-events: all;
 }
 
-
 /* responsive */
+@media screen and (max-width: 779px) {
+  .wrapper .container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 635px) {
+  .wrapper .container::before {
+    display: none;
+  }
+  .wrapper .container .SigninSignup .SignUpForm {
+    display: none;
+  }
+  .wrapper .container .panelContainer {
+    display: none;
+  }
 
+  .wrapper .container.signUpMode2 .SigninSignup .SignUpForm {
+    display: flex;
+    opacity: 1;
+  }
+  .wrapper .container.signUpMode2 .SigninSignup .SignInForm {
+    display: none;
+  }
+
+  .wrapper .container .SigninSignup .SignInForm .accountText,
+  .wrapper .container .SigninSignup .SignUpForm .accountText,
+  .wrapper
+    .container.signUpMode
+    .SigninSignup
+    .SignInForm
+    .accountText,
+  .wrapper
+    .container.signUpMode
+    .SigninSignup
+    .SignUpForm
+    .accountText {
+    display: initial;
+  }
+
+}
