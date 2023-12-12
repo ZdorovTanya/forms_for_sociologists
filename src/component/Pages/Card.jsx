@@ -11,6 +11,7 @@ import {
 } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { motion } from "framer-motion";
+import styles from "./Home.module.scss";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -65,10 +66,10 @@ const hoverEffect = {
 
 export default function Card() {
   return (
-    <motion.div className="service_container">
-      <div className="title_wrapper">
+    <motion.div className={styles.service_container}>
+      <div className={styles.title_wrapper}>
         <motion.span
-          className="service_title"
+          className={styles.service_title}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 20, opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -87,15 +88,15 @@ export default function Card() {
       </div>
 
       <motion.div
-        className="service_card"
+        className={styles.service_card}
         variants={container}
         initial="hidden"
         exit="exit"
         whileInView="show"
         viewport={{ once: false }}
       >
-        <motion.div className="card" variants={item}>
-          <motion.span className="service_icon" style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
+        <motion.div className={styles.card} variants={item}>
+          <motion.span className={styles.service_icon} style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
             <IconContext.Provider
               value={{
                 color: "#14da8f",
@@ -121,11 +122,11 @@ export default function Card() {
           </a>
         </motion.div>
 
-        <div className="card dark">
+        <div className={`${styles.card} ${styles.dark}`}>
           <img
             src={process.env.PUBLIC_URL + "/images/line.png"}
             alt="line"
-            className="line"
+            className={styles.line}
           />
           <h2>
             +4 <br /> больше...
@@ -133,7 +134,7 @@ export default function Card() {
           <a href="#">
             <span>View more...</span>
             <span
-              className="service_icon"
+              className={styles.service_icon}
               style={{ backgroundColor: "ddfbf9" }}
             >
               <IconContext.Provider

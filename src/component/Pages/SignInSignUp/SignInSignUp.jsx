@@ -9,7 +9,7 @@ export default function SignInSignUp() {
     setBtnState((btnState) => !btnState);
   }
 
-  function handleClick2() {
+  function handleClick2() { 
     setBtnState2((btnState2) => !btnState2);
   }
 

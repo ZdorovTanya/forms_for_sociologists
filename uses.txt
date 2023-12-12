@@ -1,0 +1,11 @@
+// для картинок https://github.com/react-icons/react-icons
+// npm i node-sass
+// для анимации npm i framer-motion
+// библиотека для иконок npm install @material-ui/core --legacy-peer-deps 
+(--legacy-peer-deps для принять решительное решение не устанавливать зависимости от более старых версий)
+// npm install @material-ui/icons --legacy-peer-deps
+
+
+// ссылки на авторов картинок
+// <a href="https://ru.freepik.com/free-photo/3d-render-smartphone-with-hand-fill-online-survey_33309533.htm#query=survey&position=3&from_view=search&track=sph">Изображение от upklyak</a> на Freepik
+// + favico

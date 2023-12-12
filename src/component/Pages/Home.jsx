@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Home.scss";
+import styles from "./Home.module.scss";
 import { FaBehance, FaDribbble } from "react-icons/fa";
 import {
   IoMailOpenOutline,
@@ -11,9 +11,7 @@ import { IconContext } from "react-icons";
 import Card from "./Card";
 import { animate, motion } from "framer-motion";
 import Registration from "./Registration/Registration";
-// для картинок https://github.com/react-icons/react-icons
-// npm i node-sass
-// для анимации npm i framer-motion
+
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -142,10 +140,10 @@ export default function Home() {
   return (
     <motion.div initial="initial" animate="animate">
       <motion.header variants={stagger}>
-        <motion.div className="logo_wrapper" variants={header}>
+        <motion.div className={styles.logo_wrapper} variants={header}>
           Form<span>form</span>
         </motion.div>
-        <motion.div className="menu_container" variants={stagger}>
+        <motion.div className={styles.menu_container} variants={stagger}>
           <motion.span variants={header}>
             <IconContext.Provider
               value={{
@@ -154,10 +152,10 @@ export default function Home() {
                 className: "icons_container",
               }}
             >
-              <div className="icon">
+              <div className={styles.icon}>
                 <FaBehance />
               </div>
-              <div className="icon">
+              <div className={styles.icon}>
                 <FaDribbble />
               </div>
             </IconContext.Provider>
@@ -174,7 +172,7 @@ export default function Home() {
                   size: "18px",
                 }}
               >
-                <div className="icon">
+                <div className={styles.icon}>
                   <IoMailOpenOutline />
                   пользователь
                 </div>
@@ -182,7 +180,7 @@ export default function Home() {
             </NavLink>
           </motion.span>
 
-          <motion.span className="menu" variants={header}>
+          <motion.span className={styles.menu} variants={header}>
             {/* <span></span> */}
             {/* <span></span> */}
             {/* <span></span> */}
@@ -191,18 +189,18 @@ export default function Home() {
       </motion.header>
 
       <motion.div
-        className="content_wrapper"
+        className={styles.content_wrapper}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: easing }}
       >
-        <div className="left_content_wrapper">
+        <div className={styles.left_content_wrapper}>
           <motion.h2>
             <motion.span
               variants={firstName}
               initial="initial"
               animate="animate"
-              className="first"
+              className={styles.first}
             >
               <motion.span variants={letter}>Ф</motion.span>
               <motion.span variants={letter}>о</motion.span>
@@ -210,7 +208,7 @@ export default function Home() {
               <motion.span variants={letter}>м</motion.span>
               <motion.span variants={letter}>ы</motion.span>
 
-              <motion.span variants={letter} className="second">
+              <motion.span variants={letter} className={styles.second}>
                 д
               </motion.span>
               <motion.span variants={letter}>л</motion.span>
@@ -221,7 +219,7 @@ export default function Home() {
               variants={lastName}
               initial="initial"
               animate="animate"
-              className="last"
+              className={styles.last}
             >
               <motion.span variants={letter}>п</motion.span>
               <motion.span variants={letter}>р</motion.span>
@@ -239,10 +237,10 @@ export default function Home() {
               variants={lastName}
               initial="initial"
               animate="animate"
-              className="first"
+              className={styles.first}
             >
               <motion.span variants={letter} className="">
-                с
+                с 
               </motion.span>
               <motion.span variants={letter}>о</motion.span>
               <motion.span variants={letter}>ц</motion.span>
@@ -264,7 +262,7 @@ export default function Home() {
               variants={lastName}
               initial="initial"
               animate="animate"
-              className="last"
+              className={styles.last}
             >
               <motion.span variants={letter} className="">
                 о
@@ -283,13 +281,13 @@ export default function Home() {
             удобном вам формате.
           </motion.p>
 
-          <motion.div className="btn_group" variants={stagger}>
+          <motion.div className={styles.btn_group} variants={stagger}>
             <NavLink
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/signInUp"
             >
               <motion.div
-                className="btn btn_primary"
+                className={`${styles.btn} ${styles.btn_primary}`}
                 variants={btnGroup}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -307,7 +305,7 @@ export default function Home() {
             </NavLink>
 
             <motion.div
-              className="btn btn_secondary"
+              className={`${styles.btn} ${styles.btn_secondary}`}
               variants={btnGroup}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -316,8 +314,8 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          <motion.div className="review_container" variants={stagger}>
-            <motion.p className="total_review" variants={stagger}>
+          <motion.div className={styles.review_container} variants={stagger}>
+            <motion.p className={styles.total_review} variants={stagger}>
               50+ Отзывов
               <star>
                 <IconContext.Provider
@@ -383,14 +381,14 @@ export default function Home() {
                   </motion.span>
                 </IconContext.Provider>
               </star>
-              <motion.p className="more_review" variants={star}>
+              <motion.p className={styles.more_review} variants={star}>
                 Более 50 пользователей пользуются нашим сервисом
               </motion.p>
             </motion.p>
           </motion.div>
         </div>
 
-        <motion.div className="right_content_wrapper">
+        <motion.div className={styles.right_content_wrapper}>
           <motion.img
             width={500}
             height={500}
