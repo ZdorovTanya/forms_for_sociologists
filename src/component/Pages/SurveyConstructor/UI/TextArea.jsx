@@ -17,7 +17,7 @@ export const TextArea = ({parentId, form, index, isOneSubForm}) => {
 
     return (
         <div className="w-full p-2 justify-between items-center">
-            <p className="pb-2 text-xs text-gray-500">Текстовый блок используется для добавления пояснений и аннотаций в разные места опроса</p>
+            {/* <p className="pb-2 text-xs text-gray-500">Текстовый блок используется для добавления пояснений и аннотаций в разные места опроса</p> */}
             <textarea className="w-full" placeholder={form.name} name={form.name} value={form.variants} onChange={handleChangeForm}></textarea>
         </div>
     )

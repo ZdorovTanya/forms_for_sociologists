@@ -31,7 +31,7 @@ export const Container = ({
   };
 
   return (
-    <div className="my-4 flex flex-col justify-start gap-2 p-3 border-2 border-green-500 rounded-lg">
+    <div className="my-4 flex flex-col justify-start gap-2 p-3 border-2 border-green-500 rounded-lg ">
       <div className="px-2 flex justify-between items-center">
         <div>{name}</div>
         {!requiredIsNotNeed && (

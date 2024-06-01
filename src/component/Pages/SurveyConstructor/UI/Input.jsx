@@ -1,5 +1,6 @@
 import { useEffect, useId } from "react"
 import { useSurveyConstructorStore } from "../useSurveyConstructorStore"
+import { RxCross2 } from "react-icons/rx";
 
 export const Input = ({parentId, form, index, isOneSubForm}) => {
     const initialId = useId()
@@ -21,9 +22,9 @@ export const Input = ({parentId, form, index, isOneSubForm}) => {
     }
  
     return (
-        <div className="p-2 flex justify-between items-center">
-            <input type="text" placeholder={`${form.name} ${!isOneSubForm ? index + 1 : ""}`} value={form.variants} onChange={handleChangeForm} />
-            {!isOneSubForm && <button onClick={handleRemoveSubForm} className="text-white bg-red-500 leading-3 p-2 rounded-lg">x</button>}
+        <div className="p-2 flex justify-between items-cente">
+            <input className="" type="text" placeholder={`${form.name} ${!isOneSubForm ? index + 1 : ""}`} value={form.variants} onChange={handleChangeForm} />
+            {!isOneSubForm && <button onClick={handleRemoveSubForm} className="text-white bg-red-700 leading-3 p-2 rounded-lg"><RxCross2 /></button>}
         </div>
     )
 }
