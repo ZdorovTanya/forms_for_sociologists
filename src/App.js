@@ -18,6 +18,7 @@ import { SurveyConstructor } from "./component/Pages/SurveyConstructor/SurveyCon
 import SurveyHome from "./component/Pages/SurveyConstructor/SurveyHome.jsx";
 import SurveyResult from "./component/Pages/SurveyConstructor/Result/SurveyResult.jsx";
 import SurveyLink from "./component/Pages/SurveyConstructor/Link/SurveyLink.jsx";
+import { SinglePageForm } from "./component/Pages/SurveyConstructor/Forms/SinglePageForm/SinglePageForm.jsx";
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
             <Route path="surveys/content/1" element={<SurveyConstructor />}></Route>
             <Route path="surveys/result" element={<SurveyResult />}></Route>
             <Route path="surveys/link" element={<SurveyLink />}></Route>
-            
+            <Route path="surveys/link/:id" element={<SinglePageForm />}></Route>
             
           </Routes>
         </Router>

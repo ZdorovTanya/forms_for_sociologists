@@ -14,16 +14,21 @@ export const Rating = ({form}) => {
 
     return (
         <Container id={form.id} name={form.name} required={form.required} question={form.question} isOneSubForm={true}>
+            
             <div className="flex">
                 {form.subForms.map((subForm, index) => {
                     return (
                         <div key={`${form.name}${index}`} className="w-full flex items-center">
                             <p>{subForm.name}</p>
                             <Number parentId={form.id} form={subForm} index={index}/>
+                            
                         </div>
+                        
                     )
                 })}
+                
             </div>
+           
         </Container>
     )
 }

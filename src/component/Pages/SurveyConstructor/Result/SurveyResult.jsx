@@ -252,83 +252,85 @@ export default function SurveyResult() {
           </div>
         </div>
 
-        {SURVEY.survey.questions.map((question, id) => {
-          if (
-            question.type !== "matrix" &&
-            question.type !== "date" &&
-            question.type !== "text" &&
-            question.type !== "textfield" &&
-            question.type !== "email" &&
-            question.type !== "information"
-          ) {
-            let subFormsDate = [];
-            let radialFormsDate = [];
-            question.subForms.map((subForms) => {
-              subFormsDate.push({
-                x: subForms.variants,
-                y: subForms.countAnswer,
+        <div className={styles.answer_grid}>
+          {SURVEY.survey.questions.map((question, id) => {
+            if (
+              question.type !== "matrix" &&
+              question.type !== "date" &&
+              question.type !== "text" &&
+              question.type !== "textfield" &&
+              question.type !== "email" &&
+              question.type !== "information"
+            ) {
+              let subFormsDate = [];
+              let radialFormsDate = [];
+              question.subForms.map((subForms) => {
+                subFormsDate.push({
+                  x: subForms.variants,
+                  y: subForms.countAnswer,
+                });
               });
-            });
 
-            if (question.type != "radio")
+              if (question.type != "radio")
+                return (
+                  <div className={styles.answer__container}>
+                    <p>
+                      Вопрос №{id + 1}: {question.question}
+                    </p>
+                    <p>Ответы: </p>
+                    <XYPlot height={400} width={400} xType="ordinal">
+                      <HorizontalGridLines />
+                      <YAxis title="Количество ответов" />
+                      <XAxis />
+                      <VerticalBarSeries data={subFormsDate} />
+                    </XYPlot>
+                  </div>
+                );
+              if (question.type == "radio")
+                question.subForms.map((subForms) => {
+                  radialFormsDate.push({
+                    radius: 1,
+                    title: `${subForms.variants} (${subForms.countAnswer})`,
+                    angle: subForms.countAnswer,
+                    label: `${subForms.variants} (${subForms.countAnswer})`,
+                  });
+                });
               return (
                 <div className={styles.answer__container}>
                   <p>
                     Вопрос №{id + 1}: {question.question}
                   </p>
                   <p>Ответы: </p>
-                  <XYPlot height={400} width={400} xType="ordinal">
-                    <HorizontalGridLines />
-                    <YAxis title="Количество ответов" />
-                    <XAxis />
-                    <VerticalBarSeries data={subFormsDate} />
-                  </XYPlot>
+                  <RadialChart
+                    data={radialFormsDate}
+                    width={400}
+                    height={400}
+                    showLabels
+                    innerRadius={100}
+                    radius={140}
+                    padAngle={0.04}
+                  />
                 </div>
               );
-            if (question.type == "radio")
-              question.subForms.map((subForms) => {
-                radialFormsDate.push({
-                  radius: 1,
-                  title: `${subForms.variants} (${subForms.countAnswer})`,
-                  angle: subForms.countAnswer,
-                  label: `${subForms.variants} (${subForms.countAnswer})`,
-                });
-              });
-            return (
-              <div className={styles.answer__container}>
-                <p>
-                  Вопрос №{id + 1}: {question.question}
-                </p>
-                <p>Ответы: </p>
-                <RadialChart
-                  data={radialFormsDate}
-                  width={400}
-                  height={400}
-                  showLabels
-                  innerRadius={100}
-                  radius={140}
-                  padAngle={0.04}
-                />
-              </div>
-            );
-          } else {
-            return (
-              <div className={styles.answer__container}>
-                <p>
-                  Вопрос №{id + 1}: {question.question}
-                </p>
-                <p>Ответы: </p>
-                <div className={styles.answer__text}>
-                  <ul>
-                    {question.subForms.map((answer) => {
-                      return <li>{answer.variants}</li>;
-                    })}
-                  </ul>
+            } else {
+              return (
+                <div className={styles.answer__container}>
+                  <p>
+                    Вопрос №{id + 1}: {question.question}
+                  </p>
+                  <p>Ответы: </p>
+                  <div className={styles.answer__text}>
+                    <ul>
+                      {question.subForms.map((answer) => {
+                        return <li>{answer.variants}</li>;
+                      })}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            );
-          }
-        })}
+              );
+            }
+          })}
+        </div>
       </div>
     </div>
   );

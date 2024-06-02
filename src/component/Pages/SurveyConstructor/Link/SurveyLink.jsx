@@ -22,6 +22,7 @@ export default function SurveyLink() {
   const [newId, setNewId] = useState("");
 
   const currentUrl = window.location.href;
+  const formLink = `${currentUrl}/${newId}`;
   return (
     <div>
       <UserHeader />
@@ -71,7 +72,11 @@ export default function SurveyLink() {
             <div className={styles.input_group}>
               {/* <i class="bi bi-link-45deg"></i> */}
               {/* <input type="text" onChange={(e) => setValue(e.target.value)} /> */}
-              <CopyToClipboard text={value} onCopy={() => setCopy(true)}>
+              <CopyToClipboard
+                text={value}
+                onMouseDown={() => setValue(formLink)}
+                onCopy={() => setCopy(true)}
+              >
                 <button
                   className={`${copy ? styles.copied : styles.copy}`}
                   onClick={() => setNewId(id)}
@@ -83,10 +88,7 @@ export default function SurveyLink() {
               </CopyToClipboard>
             </div>
           </div>
-          <h3>
-            {currentUrl}/{newId}
-          </h3>
-          
+          <h3>{formLink}</h3>
         </div>
       </div>
     </div>

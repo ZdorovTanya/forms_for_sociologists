@@ -17,6 +17,9 @@ export const InitForm = () => {
     (state) => state.changeSurveyDescription
   );
 
+  const surveyTimePassing = useSurveyStore((state) => state.surveyTimePassing);
+  const changeSurveyTimePassing = useSurveyStore((state) => state.changeSurveyTimePassing);
+
   const surveyTime = useSurveyStore((state) => state.surveyTime);
   const changeSurveyTime = useSurveyStore((state) => state.changeSurveyTime);
 
@@ -83,7 +86,7 @@ export const InitForm = () => {
       }}
     >
       <div className="flex">
-        <div className="py-4">
+        <div className="py-4 w-auto">
           <h3 className="py-2 text-xl">Обложка опроса</h3>
           <p className="py-2 text-gray-400">
             Выберете изображение для обложки опроса
@@ -92,7 +95,8 @@ export const InitForm = () => {
             <Uploader />
           </div>
         </div>
-        <div className="pl-10 flex flex-col">
+
+        <div className="pl-10 flex flex-col w-1/3">
           <div className="py-4">
             <h3 className="py-2 text-xl">Название</h3>
             <p className="py-2 text-gray-400">Укажите название нового опроса</p>
@@ -120,6 +124,24 @@ export const InitForm = () => {
               />
             </div>
           </div>
+        </div>
+
+        <div className="pl-10 flex flex-col w-1/3">
+          <div className="py-4">
+            <h3 className="py-2 text-xl">Время</h3>
+            <p className="py-2 text-gray-400">Укажите время прохождения опроса</p>
+            <div className="border-2 border-green-500 rounded-lg">
+              <input
+                class="p-2 w-full focus-visible:outline-none"
+                type="text"
+                placeholder="Приблизительное время прохождения опроса"
+                onChange={(e) => changeSurveyTimePassing(e.target.value)}
+                value={surveyTimePassing}
+              />
+            </div>
+          </div>
+
+
         </div>
       </div>
 
@@ -177,15 +199,13 @@ export const InitForm = () => {
                 {/* Укажите дату */}
                 {/* {surveyDeadline == '30Seconds' ? <Calendar1/> : false} */}
                 {/* <Calendar1/> */}
-                
-                  
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    className="w-24"
-                  />
-                  <FaRegCalendarAlt />
-                
+
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  className="w-24"
+                />
+                <FaRegCalendarAlt />
               </label>
             </div>
           </div>
