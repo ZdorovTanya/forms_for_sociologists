@@ -18,7 +18,14 @@ export const InitForm = () => {
   );
 
   const surveyTimePassing = useSurveyStore((state) => state.surveyTimePassing);
-  const changeSurveyTimePassing = useSurveyStore((state) => state.changeSurveyTimePassing);
+  const changeSurveyTimePassing = useSurveyStore(
+    (state) => state.changeSurveyTimePassing
+  );
+
+  const surveyAge = useSurveyStore((state) => state.surveyAge);
+  const changeSurveyAge = useSurveyStore(
+    (state) => state.changeSurveyAge
+  );
 
   const surveyTime = useSurveyStore((state) => state.surveyTime);
   const changeSurveyTime = useSurveyStore((state) => state.changeSurveyTime);
@@ -59,6 +66,11 @@ export const InitForm = () => {
     (state) => state.changeSurveyCountAnswers
   );
 
+  const surveySendAnswers = useSurveyStore((state) => state.surveySendAnswers);
+  const changeSurveySendAnswers = useSurveyStore(
+    (state) => state.changeSurveySendAnswers
+  );
+
   const navigate = useNavigate();
 
   const changeSurveyDeadlineForm = (e) => {
@@ -75,6 +87,9 @@ export const InitForm = () => {
   };
   const changeSurveyCountAnswersForm = (e) => {
     changeSurveyCountAnswers(e.target.value);
+  };
+  const changeSurveySendAnswersForm = (e) => {
+    changeSurveySendAnswers(e.target.value);
   };
 
   const [startDate, setStartDate] = useState(new Date());
@@ -129,7 +144,9 @@ export const InitForm = () => {
         <div className="pl-10 flex flex-col w-1/3">
           <div className="py-4">
             <h3 className="py-2 text-xl">Время</h3>
-            <p className="py-2 text-gray-400">Укажите время прохождения опроса</p>
+            <p className="py-2 text-gray-400">
+              Укажите время прохождения опроса
+            </p>
             <div className="border-2 border-green-500 rounded-lg">
               <input
                 class="p-2 w-full focus-visible:outline-none"
@@ -140,9 +157,24 @@ export const InitForm = () => {
               />
             </div>
           </div>
-
-
+          <div className="py-4">
+            <h3 className="py-2 text-xl">Возраст</h3>
+            <p className="py-2 text-gray-400">
+              Укажите возрастное ограничение опроса
+            </p>
+            <div className="border-2 border-green-500 rounded-lg">
+              <input
+                class="p-2 w-full focus-visible:outline-none"
+                type="number"
+                placeholder="Минимальный возраст для прохождения опроса"
+                onChange={(e) => changeSurveyAge(e.target.value)}
+                value={surveyAge}
+              />
+            </div>
+          </div>
         </div>
+
+    
       </div>
 
       <h3 className="py-2 my-5 text-xl">Настройки опроса</h3>
@@ -392,6 +424,46 @@ export const InitForm = () => {
                   }
                   value={surveyCountAnswersLabel}
                 />
+              </label>
+            </div>
+          </div>
+        </div>
+        <div className="py-4 p-5 border-solid border-2 border-slate-300 rounded-md">
+          <h3 className="py-2 text-xl">
+            Отправлять респондентам электронное письмо с их ответами
+          </h3>
+          <p className="py-2 text-gray-400">
+            Пользователям на почту придет письмо с их ответами
+            <br />
+            Вы сможете изменить этот параметр при необходимости
+          </p>
+          <div className="flex py-2">
+            <div>
+              <input
+                onChange={changeSurveySendAnswersForm}
+                className="cursor-pointer"
+                checked={surveySendAnswers === "sendletter"}
+                type="radio"
+                id="sendletter"
+                name="surveySendAnswers"
+                value="sendletter"
+              />
+              <label for="sendletter" className="pl-2">
+                Отправлять письмо
+              </label>
+            </div>
+            <div className="pl-4">
+              <input
+                onChange={changeSurveySendAnswersForm}
+                className="cursor-pointer"
+                checked={surveySendAnswers === "nosendletter"}
+                type="radio"
+                id="nosendletter"
+                name="surveySendAnswers"
+                value="nosendletter"
+              />
+              <label for="nosendletter" className="pl-2">
+                Не отправлять письмо
               </label>
             </div>
           </div>
