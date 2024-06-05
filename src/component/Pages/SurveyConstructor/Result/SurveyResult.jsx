@@ -7,6 +7,10 @@ import "./styles.scss";
 import { useSurveyConstructorStore } from "../useSurveyConstructorStore";
 import { useSurveyStore } from "../../CreateSurvey/useSurveyStore";
 
+import { BsFiletypeCsv } from "react-icons/bs";
+import { BsFileEarmarkPdf } from "react-icons/bs";
+import { BsFiletypeXml } from "react-icons/bs";
+
 import {
   XAxis,
   YAxis,
@@ -240,14 +244,14 @@ export default function SurveyResult() {
           <div className={styles.one}>
             <h3 className={styles.icon_title}>Отдельные ответы</h3>
             <div className={styles.icon}>
-              <img src="/images/icons8-csv.png" alt="" />
-              <img src="/images/icons8-excel.png" alt="" />
+              <BsFiletypeCsv size="50px" color="#57AC11"/>
+              <BsFiletypeXml size="50px" color="#2E6105"/>
             </div>
           </div>
           <div className={styles.svod}>
             <h3 className={styles.icon_title}>Сводные результаты</h3>
             <div className={styles.icon}>
-              <img src="/images/icons8-pdf.png" alt="" />
+              <BsFileEarmarkPdf size="50px" color="#E40716"/>
             </div>
           </div>
         </div>

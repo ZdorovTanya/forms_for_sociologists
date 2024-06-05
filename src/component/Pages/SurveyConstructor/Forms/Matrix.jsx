@@ -38,7 +38,7 @@ export const Matrix = ({ form }) => {
           })}
           <p
             onClick={() => addNewMatrixSubForm(form.id, false)}
-            className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer"
+            className="p-2 text-gray-400 hover:text-green-600 cursor-pointer"
           >
             Добавить вариант
           </p>
@@ -58,7 +58,7 @@ export const Matrix = ({ form }) => {
           })}
           <p
             onClick={() => addNewMatrixSubForm(form.id, true)}
-            className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer"
+            className="p-2 text-gray-400 hover:text-green-600 cursor-pointer"
           >
             Добавить вариант
           </p>

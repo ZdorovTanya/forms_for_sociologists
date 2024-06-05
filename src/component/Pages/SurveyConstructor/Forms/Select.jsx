@@ -25,7 +25,7 @@ export const Select = ({form}) => {
                         <Input key={`${form.name}${index}`} parentId={form.id} form={subForm} index={index} />
                     )
                 })}
-                <p onClick={AddNewSubForm} className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer">Добавить вариант</p>
+                <p onClick={AddNewSubForm} className="p-2 text-gray-400 hover:text-green-600 cursor-pointer">Добавить вариант</p>
             </div>
         </Container>
     )

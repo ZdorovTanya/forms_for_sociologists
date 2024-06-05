@@ -5,6 +5,7 @@ import { FaTrash } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { IoSettingsSharp } from "react-icons/io5";
 import { EditUserImage } from "./edit/EditUserImage";
+import { ImExit } from "react-icons/im";
 
 const info = [
   {
@@ -12,6 +13,7 @@ const info = [
     name: "Татьяна Андреевна Здоровило",
     img: "./../../../..//images/15.jpg",
     email: `zdorovilo.tanya@mail.ru`,
+    birth: `16.03.2003`,
     data: `15.02.2024`,
     gender: "male",
   },
@@ -60,8 +62,15 @@ export default function UserInfo() {
                 <h3>{p.name}</h3>
                 <div className={styles.info_email}>{p.email}</div>
                 <div className={styles.data_info}>
+                  <h4>Дата рождения</h4>
+                  <div className={styles.info_email}>{p.birth}</div>
+                </div>
+                <div className={styles.data_info}>
                   <h4>Дата регистрации</h4>
                   <div className={styles.info_email}>{p.data}</div>
+                </div>
+                <div>
+                  <ImExit className={styles.exit} />
                 </div>
               </>
             ))}

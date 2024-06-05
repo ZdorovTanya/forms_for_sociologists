@@ -5,7 +5,7 @@ import styles from "./UserSetting.module.scss";
 import Button from "./Button";
 
 function UserSettings() {
-  return ( 
+  return (
     <div className={styles.wrapper}>
       <UserHeader />
 
@@ -33,9 +33,18 @@ function UserSettings() {
                 <input
                   className={styles.team_name}
                   type="email"
-                  name="name"
-                  id="name"
+                  name="email"
+                  id="email"
                   placeholder="Почта пользователя"
+                  required
+                  autofocus
+                />
+                <input
+                  className={styles.team_name}
+                  type="data"
+                  name="data"
+                  id="data"
+                  placeholder="Дата рождения"
                   required
                   autofocus
                 />
@@ -101,7 +110,7 @@ function UserSettings() {
               <div className={styles.shure}>Вы не сможете изменить решение</div>
             </div>
             <div className={styles.right_input}>
-              <button type="submit" >
+              <button type="submit">
                 <Button text={"Удалить аккаунт"} />
               </button>
             </div>

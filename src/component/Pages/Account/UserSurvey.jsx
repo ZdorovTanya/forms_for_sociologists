@@ -20,6 +20,7 @@ const data = [
     name: "Как пить больше воды",
     review: `Сколько пить воды и почему это так важно`,
   },
+
 ];
 
 export default function UserSurvey() {
@@ -28,29 +29,29 @@ export default function UserSurvey() {
       <h2 className={styles.survey_header}>Все опросы</h2>
 
       <div className={styles.survey_items}>
-            {data.map((d) => (
-              <div className={styles.survey_item}>
-                <div className={styles.survey_item}>
-                  <div href="" className={styles.survey_image}>
-                    <img src={d.img} alt="" className="" />
-                  </div>
-
-                  <div className={styles.survey_title_go}>
-                    <div href="" className={styles.survey_name}>
-                      {d.name}
-                    </div>
-                    <NavLink to="/survey">
-                      <GoArrowUpRight className={styles.survey_go} />
-                    </NavLink>
-                  </div>
-
-                  <div href="" className={styles.survey_review}>
-                    {d.review}
-                  </div>
-                </div>
+        {data.map((d) => (
+          <div className={styles.survey_item}>
+            <div className={styles.survey_item}>
+              <div href="" className={styles.survey_image}>
+                <img src={d.img} alt="" className="" />
               </div>
-            ))}
+
+              <div className={styles.survey_title_go}>
+                <div href="" className={styles.survey_name}>
+                  {d.name}
+                </div>
+                <NavLink to="/survey">
+                  <GoArrowUpRight className={styles.survey_go} />
+                </NavLink>
+              </div>
+
+              <div href="" className={styles.survey_review}>
+                {d.review}
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
     </div>
   );
 }

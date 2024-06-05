@@ -7,6 +7,13 @@
   display: flex;
   margin-bottom: 50px;
 }
+.exit {
+  align-items: flex-end;
+  cursor: pointer;
+}
+.exit:hover {
+  color: #985252;
+}
 .team_image {
   display: flex;
   flex-direction: column;
@@ -62,11 +69,11 @@
   gap: 40px;
 }
 
-.info_email{
-    color: #b8b8b8;
+.info_email {
+  color: #b8b8b8;
 }
-.data_info{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.data_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

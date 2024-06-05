@@ -27,7 +27,7 @@ export default function NewTeam() {
               type="text"
               name="name"
               id="name"
-              placeholder="Название команды"
+              placeholder="Название группы"
               required
               autofocus
             />
@@ -37,7 +37,7 @@ export default function NewTeam() {
               name="comment"
               cols="40"
               rows="3"
-              placeholder="Введите описание команды"
+              placeholder="Введите описание группы"
             ></textarea>
           </div>
 
