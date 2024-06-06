@@ -47,7 +47,7 @@ export const EditPostForm = (props) => {
             className={styles.editFormInput}
             type="text"
             name="postTitle"
-            placeholder="Заголовок поста"
+            placeholder="Название команды"
             // value={postTitle}
             // onChange={handlePostTitleChange}
             required
@@ -57,7 +57,7 @@ export const EditPostForm = (props) => {
           <textarea
             className={styles.editFormInput}
             name="postDescription"
-            placeholder="Описание поста"
+            placeholder="Описание команды"
             // value={postDesc}
             // onChange={handlePostDescChange}
             rows={8}

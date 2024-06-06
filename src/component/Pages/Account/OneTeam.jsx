@@ -12,6 +12,7 @@ import DropDownTeam from "./dropdown/DropDownTeam";
 import { GoArrowUpRight } from "react-icons/go";
 import { EditPostForm } from "./edit/EditPostForm";
 import { EditUserImage } from "./edit/EditUserImage";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const info = [
   {
@@ -19,6 +20,7 @@ const info = [
     name: "Команда Шашлыки",
     img: `..//images/4.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis`,
+    date: "06.06.2024",
   },
 ];
 
@@ -140,13 +142,25 @@ export default function OneTeam() {
             <div className={styles.info}>
               {info.map((p) => (
                 <>
-                  <h3>{p.name}</h3>
-                  <div>{p.review}</div>
+                  <div className="flex items-center justify-between">
+                    <h3 className="">{p.name}</h3>
+                    <IoSettingsSharp
+                      className={styles.edit_info}
+                      onClick={handleEditFormShow}
+                    />
+                  </div>
+                  <div className={styles.team_desc}>{p.review}</div>
+                  <div className={styles.team_date}>
+                    <p>Дата создания команды</p>
+                    <h4>{p.date}</h4>
+                  </div>
+                  <div className={styles.delete_team}>
+                    <button>Удалить команду</button>
+                  </div>
                 </>
               ))}
             </div>
 
-            <CiEdit className={styles.edit_info} onClick={handleEditFormShow} />
             {/* <Button text={"Сохранить"} /> */}
           </div>
         </div>
@@ -157,6 +171,16 @@ export default function OneTeam() {
             <NavLink to="/addPart">
               <Button text={"Добавить участника"} />
             </NavLink>
+          </div>
+
+          <div>
+            <h3 className="w-1/2 mb-8 text-lg text-slate-500">
+              Добавляйте других пользователей в свою команду для помощи в работе
+              над опросами. Назначайте им роли{" "}
+              <abbr title="Обладает всеми правами ">администратора</abbr> или{" "}
+              <abbr title="Ограниченные права ">редактора</abbr> для
+              разграничения доступа.
+            </h3>
           </div>
 
           <div className={styles.survey_items}>
@@ -173,16 +197,6 @@ export default function OneTeam() {
                       }
                       fullSelected={selected}
                       setSelected={setSelected}
-                    />
-
-                    <DropDownTeam
-                      id={p.id}
-                      className={styles.choice_team}
-                      selected={
-                        selectedTeam[p.id] ? selectedTeam[p.id] : <MdGroupAdd />
-                      }
-                      fullSelected={selectedTeam}
-                      setSelected={setSelectedTeam}
                     />
                   </div>
 
@@ -213,13 +227,25 @@ export default function OneTeam() {
             </NavLink>
           </div>
 
+          <div>
+            <h3 className="w-1/2 mb-8 text-lg text-slate-500">
+              Добавляйте существующие команды в вашу или создавайте новую. Вы
+              можете назначить роли:{" "}
+              <abbr title="Обладает всеми правами ">администратора</abbr>,{" "}
+              <abbr title="Ограниченные права ">редактора</abbr> или{" "}
+              <abbr title="Только прохождение опроса ">читателя</abbr> для
+              отдельного участника или целой группы.
+            </h3>
+          </div>
+
           <div className={styles.survey_items}>
             {teams.map((t) => (
+              <NavLink to="/oneTeam">
               <div key={t.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
                   <div href="" className={styles.survey_image}>
                     <img src={t.img} alt="" className="" />
-                    <NavLink to="/oneGroup">
+                    <NavLink to="/oneTeam">
                       <GoArrowUpRight
                         className={`${styles.choice_role} ${styles.bc}`}
                       />
@@ -239,6 +265,7 @@ export default function OneTeam() {
                   </div>
                 </div>
               </div>
+              </NavLink>
             ))}
           </div>
         </div>

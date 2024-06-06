@@ -51,6 +51,15 @@ export default function AllTeam() {
           </NavLink>
         </div>
 
+        <div>
+          <h3 className="w-1/2 mb-8 text-xl text-slate-500">
+            Создавайте команды для более удобной совместной работы над опросами.
+            В них вы можете добавлять участником и назначать роли, а также
+            формировать группы для работы и прохождения опросов.{" "}
+          </h3>
+        </div>
+
+        <NavLink to="/oneTeam">
         <div className={styles.survey_items}>
           {data.map((d) => (
             <div className={styles.survey_item}>
@@ -58,10 +67,10 @@ export default function AllTeam() {
                 <div href="" className={styles.survey_image}>
                   <img src={d.img} alt="" className="" />
                   <NavLink to="/oneTeam">
-                      <GoArrowUpRight
-                        className={`${styles.choice_role} ${styles.bc}`}
-                      />
-                    </NavLink>
+                    <GoArrowUpRight
+                      className={`${styles.choice_role} ${styles.bc}`}
+                    />
+                  </NavLink>
                 </div>
                 <div href="" className={styles.survey_name}>
                   {d.name}
@@ -76,6 +85,7 @@ export default function AllTeam() {
             </div>
           ))}
         </div>
+        </NavLink>
       </div>
     </div>
   );

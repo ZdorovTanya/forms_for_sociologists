@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function DropDown({ selected, setSelected, id, fullSelected }) {
   const [isActive, setIsActive] = useState(false);
-  const options = ["Администратор", "Участник", "Читатель"];
+  const options = ["Администратор", "Редактор"];
 
   const createOption = (allRoles, userId, newRole) => {
     const newh = Object.assign({}, allRoles);

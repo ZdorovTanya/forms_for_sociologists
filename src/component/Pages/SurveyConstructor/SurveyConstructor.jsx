@@ -8,8 +8,6 @@ import { NavLink } from "react-router-dom";
 import { useSurveyConstructorStore } from "./useSurveyConstructorStore";
 import { useSurveyStore } from "./../CreateSurvey/useSurveyStore";
 
-
-
 export const SurveyConstructor = () => {
   const [open, setOpen] = useState(false);
 
@@ -66,21 +64,19 @@ export const SurveyConstructor = () => {
           </NavLink>
         </div>
       </div>
-      <div className="container mx-auto px-20">
-        {/* <h1 className="w-full border-b-2 border-gray-400 pb-4 font-sans text-2xl">
-          Конструктор опроса
-        </h1> */}
+      <div className="container mx-auto text-center px-20">
         <FormCreator />
         <button
           onClick={() => {
             setOpen(true);
           }}
-          className="w-full text-4xl mb-6 mt-6 py-1 hover:text-white hover:bg-green-400 rounded-xl transition-all"
+          className="w-1/2 text-4xl my-6 py-1 hover:text-white hover:bg-green-400 rounded-xl transition-all"
         >
-        +
+          +
         </button>
+
         <Button text={"Сохранить"} onClick={saveSurvey} />
-        {/* <button>Сохранить</button> */}
+
         <NewForm open={open} setOpen={setOpen} />
       </div>
     </>
