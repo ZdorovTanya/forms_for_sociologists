@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./DropDownGroup.module.scss";
 import { useState } from "react";
 
-function DropDown({ selected, setSelected, id, fullSelected }) {
+function DropDownGroup({ selected, setSelected, id, fullSelected }) {
   const [isActive, setIsActive] = useState(false);
   const options = ["Администратор", "Участник", "Читатель"];
 
@@ -45,4 +45,4 @@ function DropDown({ selected, setSelected, id, fullSelected }) {
   );
 }
 
-export default DropDown;
+export default DropDownGroup;

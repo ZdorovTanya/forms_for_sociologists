@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import UserHeader from "./UserHeader";
 import styles from "./OneTeam.module.scss";
 import Button from "./Button";
+import DropDown from "./dropdown/DropDown";
+import DropDownGroup from "./dropdown/DropDowmGroup";
+
 import { NavLink } from "react-router-dom";
 import { CgMoreVerticalAlt } from "react-icons/cg";
 import { MdGroupAdd } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
-import DropDown from "./dropdown/DropDown";
-import DropDownTeam from "./dropdown/DropDownTeam";
 import { GoArrowUpRight } from "react-icons/go";
 import { EditPostForm } from "./edit/EditPostForm";
 import { EditUserImage } from "./edit/EditUserImage";
@@ -98,7 +99,8 @@ const team_survey = [
 
 export default function OneTeam() {
   const [selected, setSelected] = useState(<CgMoreVerticalAlt />);
-  const [selectedTeam, setSelectedTeam] = useState(<MdGroupAdd />);
+  const [selectedGroup, setSelectedGroup] = useState(<CgMoreVerticalAlt />);
+  // const [selectedTeam, setSelectedTeam] = useState(<MdGroupAdd />);
   const [people, setPeople] = useState(person);
   const [teams, setTeams] = useState(team);
   const [show, showEditForm] = useState(false);
@@ -240,16 +242,20 @@ export default function OneTeam() {
 
           <div className={styles.survey_items}>
             {teams.map((t) => (
-              <NavLink to="/oneTeam">
+              <NavLink to="/oneGroup">
               <div key={t.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
                   <div href="" className={styles.survey_image}>
                     <img src={t.img} alt="" className="" />
-                    <NavLink to="/oneTeam">
-                      <GoArrowUpRight
-                        className={`${styles.choice_role} ${styles.bc}`}
-                      />
-                    </NavLink>
+                    <DropDownGroup
+                      id={t.id}
+                      className={styles.choice_role}
+                      selected={
+                        selectedGroup[t.id] ? selectedGroup[t.id] : <CgMoreVerticalAlt />
+                      }
+                      fullSelected={selectedGroup}
+                      setSelected={setSelectedGroup}
+                    />
                   </div>
                   <div className={styles.team_name_title}>
                     <div href="" className={styles.survey_name}>
@@ -265,7 +271,7 @@ export default function OneTeam() {
                   </div>
                 </div>
               </div>
-              </NavLink>
+               </NavLink>
             ))}
           </div>
         </div>
@@ -282,6 +288,7 @@ export default function OneTeam() {
                 <div className={styles.survey_item}>
                   <div href="" className={styles.survey_image}>
                     <img src={ts.img} alt="" className="" />
+                    
                   </div>
 
                   <div className={styles.survey_title_go}>

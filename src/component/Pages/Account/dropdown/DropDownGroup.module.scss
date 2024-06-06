@@ -1,7 +1,7 @@
 .dropdown {
-  /* margin: 0 auto; */
+  margin: -97% 10px;
   padding: 5px;
-  /* position: relative; */
+  position: relative;
   user-select: none;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2px;
@@ -17,11 +17,12 @@
 
 .dropdown,
 .dropdown_content {
-  /* left: 65%; */
-  /* position: absolute; */
-  /* top: 100%; */
+  left: 0;
+  position: absolute;
+  top: 110%;
   border-radius: 2px;
 }
+
 
 .dropdown_content,
 .dropdown_item {
@@ -29,10 +30,10 @@
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.2s;
-  /* z-index: 2; */
 }
+
 
 .dropdown_content:hover,
 .dropdown_item:hover {
-  background-color: rgba(233, 225, 225, 0.5);
+    background-color: rgba(233, 225, 225, 0.5);
 }
