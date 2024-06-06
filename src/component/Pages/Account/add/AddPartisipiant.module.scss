@@ -5,40 +5,47 @@ $white: #fff;
 $light_grey: #dadada;
 
 .form_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 70vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 70vh; */
 
-    > form {
-        display: grid;
-        gap: 1em;
-        width: 500px;
-        font-size: 1.25rem;
+  > form {
+    display: grid;
+    gap: 1em;
+    width: 500px;
+    font-size: 1.25rem;
 
-        > * {
-            outline: 2px solid silver;
-            padding: 1em;
-            border-radius: .5em;
-        }
-
-        button[type=submit] {
-            font-family: "Rubik", sans-serif;
-            border-radius: 0.5em;
-            background-color: $white;
-            /* color: $black; */
-            outline: 2px solid $dark_green;
-            text-align: center;
-
-            transition: all 0.3s ease-in-out;
-
-            position: relative;
-          
-            &:hover {
-              box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -10px;
-              cursor: pointer;
-              top: -1px;
-            }
-        }
+    > * {
+      outline: 2px solid silver;
+      padding: 1em;
+      border-radius: 0.5em;
     }
+
+    button[type="submit"] {
+      font-family: "Rubik", sans-serif;
+      border-radius: 0.5em;
+      background-color: $white;
+      /* color: $black; */
+      outline: 2px solid $dark_green;
+      text-align: center;
+
+      transition: all 0.3s ease-in-out;
+
+      position: relative;
+
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -10px;
+        cursor: pointer;
+        top: -1px;
+      }
+
+      .copy {
+        background-color: rgb(77, 144, 253);
+      }
+      .copied {
+        background-color: rgb(39, 196, 82);
+      }
+    }
+  }
 }

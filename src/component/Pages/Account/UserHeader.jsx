@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./UserHeader.module.scss";
 import { NavLink } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
- 
+import { ImExit } from "react-icons/im";
+
 export default function UserHeader() {
   return (
     <div>
@@ -23,11 +24,15 @@ export default function UserHeader() {
           Все команды
         </NavLink>
 
-        <NavLink to="/user">
-          <div className={styles.userPanel}>
-            <FaUserAlt />
-          </div>
-        </NavLink>
+        <div className="flex items-center">
+          <NavLink to="/user">
+            <div className={styles.userPanel}>
+              <FaUserAlt />
+            </div>
+          </NavLink>
+
+          <ImExit className="ml-4 size-6 text-gray-400 hover:text-gray-700" />
+        </div>
       </div>
     </div>
   );

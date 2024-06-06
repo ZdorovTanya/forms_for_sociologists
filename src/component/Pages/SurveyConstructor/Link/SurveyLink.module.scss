@@ -19,7 +19,7 @@ button {
   border: none;
 }
 
-.dflex {
+.dflex { 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,13 +108,13 @@ button {
   outline: 2px solid $dark_green;
   cursor: pointer;
 }
-
-/* .copy {
+/* 
+.copy {
   background-color: rgb(77, 144, 253);
-} */
-/* .copied {
+} 
+ .copied {
   background-color: rgb(39, 196, 82);
-} */
+}  */
 
 .copy {
   padding: 0.4em 1em;

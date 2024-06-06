@@ -224,12 +224,12 @@ export default function OneTeam() {
         <div className={styles.team_team}>
           <div className={styles.team_title}>
             <h2>Группы участников</h2>
-            <NavLink to="/newGroup">
-              <Button text={"Создать группу"} />
+            <NavLink to="/addPart">
+              <Button text={"Добавить группу"} />
             </NavLink>
           </div>
 
-          <div>
+          <div className="flex justify-between">
             <h3 className="w-1/2 mb-8 text-lg text-slate-500">
               Добавляйте существующие команды в вашу или создавайте новую. Вы
               можете назначить роли:{" "}
@@ -238,40 +238,47 @@ export default function OneTeam() {
               <abbr title="Только прохождение опроса ">читателя</abbr> для
               отдельного участника или целой группы.
             </h3>
+            <NavLink to="/newGroup">
+              <Button text={"Создать группу"} />
+            </NavLink>
           </div>
 
           <div className={styles.survey_items}>
             {teams.map((t) => (
               <NavLink to="/oneGroup">
-              <div key={t.id} className={styles.survey_item}>
-                <div className={styles.survey_item}>
-                  <div href="" className={styles.survey_image}>
-                    <img src={t.img} alt="" className="" />
-                    <DropDownGroup
-                      id={t.id}
-                      className={styles.choice_role}
-                      selected={
-                        selectedGroup[t.id] ? selectedGroup[t.id] : <CgMoreVerticalAlt />
-                      }
-                      fullSelected={selectedGroup}
-                      setSelected={setSelectedGroup}
-                    />
-                  </div>
-                  <div className={styles.team_name_title}>
-                    <div href="" className={styles.survey_name}>
-                      {t.name}
+                <div key={t.id} className={styles.survey_item}>
+                  <div className={styles.survey_item}>
+                    <div href="" className={styles.survey_image}>
+                      <img src={t.img} alt="" className="" />
+                      <DropDownGroup
+                        id={t.id}
+                        className={styles.choice_role}
+                        selected={
+                          selectedGroup[t.id] ? (
+                            selectedGroup[t.id]
+                          ) : (
+                            <CgMoreVerticalAlt />
+                          )
+                        }
+                        fullSelected={selectedGroup}
+                        setSelected={setSelectedGroup}
+                      />
                     </div>
-                    <div className={styles.delete}>
-                      <FaTrash onClick={() => handleDeleteTeam(t.id)} />
+                    <div className={styles.team_name_title}>
+                      <div href="" className={styles.survey_name}>
+                        {t.name}
+                      </div>
+                      <div className={styles.delete}>
+                        <FaTrash onClick={() => handleDeleteTeam(t.id)} />
+                      </div>
                     </div>
-                  </div>
 
-                  <div href="" className={styles.survey_review}>
-                    {t.review}
+                    <div href="" className={styles.survey_review}>
+                      {t.review}
+                    </div>
                   </div>
                 </div>
-              </div>
-               </NavLink>
+              </NavLink>
             ))}
           </div>
         </div>
@@ -288,7 +295,6 @@ export default function OneTeam() {
                 <div className={styles.survey_item}>
                   <div href="" className={styles.survey_image}>
                     <img src={ts.img} alt="" className="" />
-                    
                   </div>
 
                   <div className={styles.survey_title_go}>

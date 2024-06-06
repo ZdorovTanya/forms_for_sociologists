@@ -75,7 +75,7 @@ export default function SurveyLink() {
                   className={`${copy ? styles.copied : styles.copy}`}
                   onMouseDown={() => setNewId(id)}
                   onMouseUp={() => setValue(formLink)}
-                >
+                > 
                   {copy
                     ? "Ссылка на опрос скопирована"
                     : "Скопировать ссылку на опрос"}
