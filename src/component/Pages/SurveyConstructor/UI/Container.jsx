@@ -57,7 +57,6 @@ export const Container = ({
         />
       </div>
       {children}
-      {/* <button className="p-2 text-white bg-green-500 rounded-lg" onClick={handleRemoveForm}>Удалить</button> */}
     </div>
   );
 };

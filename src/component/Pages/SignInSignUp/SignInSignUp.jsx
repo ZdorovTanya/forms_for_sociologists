@@ -124,7 +124,6 @@ export default function SignInSignUp() {
               />
             </div>
             <input type="submit" value="Регистрация" className={styles.btn} />
-            {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {

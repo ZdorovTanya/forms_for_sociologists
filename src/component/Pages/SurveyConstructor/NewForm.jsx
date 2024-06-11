@@ -57,40 +57,6 @@ const allForms = [
       },
     ],
   },
-  // было бы славно сделать загрузку файла и может еще какое-то поле
-  //   {
-  //     img: "./..//../../../images/icons8-string.png",
-  //     name: "Текстовое поле",
-  //     type: "textfield",
-  //     question: "",
-  //     required: false,
-  //     subForms: [
-  //       {
-  //         name: "Подсказка",
-  //         variants: "",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Открытый список",
-  //     type: "select",
-  //     question: "",
-  //     required: false,
-  //     subForms: [
-  //       {
-  //         name: "Вариант",
-  //         variants: "",
-  //       },
-  //       {
-  //         name: "Вариант",
-  //         variants: "",
-  //       },
-  //       {
-  //         name: "Вариант",
-  //         variants: "",
-  //       },
-  //     ],
-  //   },
   {
     img: "./..//../../../images/icons8-scale.png",
     name: "Шкала оценки",
@@ -216,7 +182,6 @@ export const NewForm = ({ open, setOpen }) => {
                 className="border-2 hover:border-green-300 border-green-500 rounded-lg p-2 cursor-pointer transition-all"
               >
                 <div className="flex gap-2">
-                  {/* {" "} */}
                   <img className="size-6" src={el.img} />
                   {el.name}
                 </div>
