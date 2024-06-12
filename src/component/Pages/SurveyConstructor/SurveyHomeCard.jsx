@@ -31,7 +31,7 @@ const data = [
 
 export default function SurveyHomeCard() {
   return (
-    <div className={styles.info}>
+    <div>
       <div className={styles.title}>
         <h2>Наши возможности</h2>
         <NavLink to="/survey">

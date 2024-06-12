@@ -23,9 +23,7 @@ export const InitForm = () => {
   );
 
   const surveyAge = useSurveyStore((state) => state.surveyAge);
-  const changeSurveyAge = useSurveyStore(
-    (state) => state.changeSurveyAge
-  );
+  const changeSurveyAge = useSurveyStore((state) => state.changeSurveyAge);
 
   const surveyTime = useSurveyStore((state) => state.surveyTime);
   const changeSurveyTime = useSurveyStore((state) => state.changeSurveyTime);
@@ -173,8 +171,6 @@ export const InitForm = () => {
             </div>
           </div>
         </div>
-
-    
       </div>
 
       <h3 className="py-2 my-5 text-xl">Настройки опроса</h3>

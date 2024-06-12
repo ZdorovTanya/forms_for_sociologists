@@ -29,25 +29,26 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route path="signInUp" element={<SignInSignUp />}></Route>
-            {/* <Route path="registration" element={<Registration />}></Route> */}
-            {/* <Route path="login" element={<Login />}></Route> */}
+
             <Route path="form" element={<Login />}></Route>
             <Route path="user" element={<User />}></Route>
-            <Route path="survey" element={<CreateSurvey />}></Route>
-            <Route path="surveyHome" element={<SurveyHome />}></Route>
+            <Route path="userSettings" element={<UserSettings />}></Route>
+
             <Route path="newForm" element={<NewForm />}></Route>
             <Route path="allTeam" element={<AllTeam />}></Route>
             <Route path="oneTeam" element={<OneTeam />}></Route>
             <Route path="newTeam" element={<NewTeam />}></Route>
             <Route path="addPart" element={<AddPartisipiant />}></Route>
-            <Route path="userSettings" element={<UserSettings />}></Route>
             <Route path="oneGroup" element={<OneGroup />}></Route>
             <Route path="newGroup" element={<NewGroup />}></Route>
+
+            <Route path="survey" element={<CreateSurvey />}></Route>
+            <Route path="surveys" element={<SurveyHome />}></Route>
             <Route path="surveys/content/1" element={<SurveyConstructor />}></Route>
             <Route path="surveys/result" element={<SurveyResult />}></Route>
             <Route path="surveys/link" element={<SurveyLink />}></Route>
             <Route path="surveys/link/:id" element={<SurveyForm />}></Route>
-            <Route path="surveys" element={<SurveysList />}></Route>
+            {/* <Route path="surveys" element={<SurveysList />}></Route> */}
           </Routes>
         </Router>
       </div>

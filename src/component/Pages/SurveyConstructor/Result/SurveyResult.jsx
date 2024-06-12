@@ -20,9 +20,14 @@ import {
   RadialChart,
 } from "react-vis";
 
+import { Link, useParams } from "react-router-dom";
+import { useSurveyResult } from "../../../../lib/hooks/useSurveyResult";
+
 export default function SurveyResult() {
   const forms = useSurveyConstructorStore((state) => state.forms);
   const surveyData = useSurveyStore((get) => get);
+  const { id: surveyId } = useParams();
+  const { isPending, error, data } = useSurveyResult(surveyId);
 
   const SURVEY = {
     survey: {
@@ -87,12 +92,17 @@ export default function SurveyResult() {
           question: "str",
           required: "false",
           subForms: [
-            { name: "Вариант", variants: "Ответ 1", id: ":r1", countAnswer: 1 },
+            {
+              name: "Вариант",
+              variants: "Ответ 1",
+              id: ":r1",
+              countAnswer: 1,
+            },
             { name: "Вариант", variants: "Ответ 2", id: ":r2", countAnswer: 1 },
             { name: "Вариант", variants: "Ответ 3", id: ":r3", countAnswer: 1 },
-            { name: "Вариант", variants: "Ответ 4", id: ":r4", countAnswer: 1 },
-            { name: "Вариант", variants: "Ответ 5", id: ":r5", countAnswer: 1 },
-            { name: "Вариант", variants: "Ответ 6", id: ":r6", countAnswer: 1 },
+            { name: "Вариант", variants: "Ответ 1", id: ":r4", countAnswer: 1 },
+            { name: "Вариант", variants: "Ответ 1", id: ":r5", countAnswer: 1 },
+            { name: "Вариант", variants: "Ответ 2", id: ":r6", countAnswer: 1 },
           ],
           type: "textfield",
         },
@@ -217,7 +227,7 @@ export default function SurveyResult() {
   return (
     <div>
       <UserHeader />
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto px-20 mb-8">
         <div className="flex justify-between w-full border-b-2 border-gray-400 ">
           <NavLink to="/survey">
             <h2 className="text-gray-400">Настройки опроса</h2>
@@ -244,14 +254,14 @@ export default function SurveyResult() {
           <div className={styles.one}>
             <h3 className={styles.icon_title}>Отдельные ответы</h3>
             <div className={styles.icon}>
-              <BsFiletypeCsv size="50px" color="#57AC11"/>
-              <BsFiletypeXml size="50px" color="#2E6105"/>
+              <BsFiletypeCsv size="50px" color="#57AC11" />
+              <BsFiletypeXml size="50px" color="#2E6105" />
             </div>
           </div>
           <div className={styles.svod}>
             <h3 className={styles.icon_title}>Сводные результаты</h3>
             <div className={styles.icon}>
-              <BsFileEarmarkPdf size="50px" color="#E40716"/>
+              <BsFileEarmarkPdf size="50px" color="#E40716" />
             </div>
           </div>
         </div>

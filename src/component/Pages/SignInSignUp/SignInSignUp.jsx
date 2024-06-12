@@ -60,7 +60,7 @@ export default function SignInSignUp() {
             {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
               {/* <a href="#" className={styles.socialIcon}></a> */}
-              <GoogleLogin
+              {/* <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   const credentialResponseDecoded = jwtDecode(
                     credentialResponse.credential
@@ -76,12 +76,12 @@ export default function SignInSignUp() {
                 onError={() => {
                   console.log("Login Failed");
                 }}
-              />
+              /> */}
             </div>
             <p className={styles.accountText}>
               Нет аккаунта?
               <a href="#" onClick={handleClick2} className={styles.signUpBtn2}>
-                Войти
+                Зарегистрироваться
               </a>
             </p>
           </form>
@@ -125,7 +125,7 @@ export default function SignInSignUp() {
             </div>
             <input type="submit" value="Регистрация" className={styles.btn} />
             <div className={styles.socialMedia}>
-              <GoogleLogin
+              {/* <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   const credentialResponseDecoded = jwtDecode(
                     credentialResponse.credential
@@ -141,7 +141,7 @@ export default function SignInSignUp() {
                 onError={() => {
                   console.log("Login Failed");
                 }}
-              />
+              /> */}
             </div>
             <p className={styles.accountText}>
               Есть аккаунт?
@@ -156,7 +156,7 @@ export default function SignInSignUp() {
             <div className={styles.content}>
               <h3 className={styles.panelTitle}>Уже зарегистрированны?</h3>
               <p className={styles.panelText}>
-                Войдите с помощью логина и пароля или с помощью Google
+                Войдите с помощью логина и пароля 
               </p>
               <button
                 onClick={handleClick}
@@ -174,7 +174,7 @@ export default function SignInSignUp() {
                 Не зарегистрированны?
               </h3>
               <p className={styles.panelText}>
-                Создайте аккаунт или зайдите с помощью Google
+                Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса
               </p>
               <button
                 onClick={handleClick}

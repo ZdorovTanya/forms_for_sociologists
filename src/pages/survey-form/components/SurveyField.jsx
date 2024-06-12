@@ -7,7 +7,7 @@ const SurveyField = forwardRef(({ question, ...rest }, ref) => {
       {(question.type === 'text' || question.type === 'textarea' || question.type === 'email') && (
         <div className="rounded-b-xl bg-white focus-within:bg-emerald-600 duration-500">
           <textarea
-            {...rest}
+            {...rest} 
             ref={ref}
             id={question.number}
             className="w-full px-4 pt-2 resize-none bg-white"

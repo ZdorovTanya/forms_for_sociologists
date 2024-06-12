@@ -17,7 +17,7 @@ export default function UserHeader() {
         <NavLink to="/newTeam" className={styles.links}>
           Создать команду
         </NavLink>
-        <NavLink to="/surveyHome" className={styles.links}>
+        <NavLink to="/surveys" className={styles.links}>
           Создать опрос
         </NavLink>
         <NavLink to="/allTeam" className={styles.links}>

@@ -4,6 +4,7 @@ import { FormCreator } from "./Forms/FormCreator";
 import UserHeader from "../Account/UserHeader";
 import Button from "../Account/Button";
 import { NavLink } from "react-router-dom";
+import { API_HOST_URL } from "../../../lib/constants";
 
 import { useSurveyConstructorStore } from "./useSurveyConstructorStore";
 import { useSurveyStore } from "./../CreateSurvey/useSurveyStore";
@@ -15,33 +16,34 @@ export const SurveyConstructor = () => {
   const surveyData = useSurveyStore((get) => get);
 
   const saveSurvey = async () => {
-    const SURVEY = {
+    const new_survey = {
       survey: {
         name: surveyData.surveyName,
-        questions_count: 2,
+        // wallpaper: {file png/jpeg},
+        description: surveyData.surveyDescription,
         actived: true,
-        private: surveyData.surveyAnonymous,
-        start_date: null,
-        end_date: surveyData.surveyDeadline,
-        questions: [
-          {
-            number: 1,
-            type: "text",
-            text: "fav artist?",
-          },
-          {
-            number: 2,
-            type: "text",
-            text: "fav song?",
-          },
-        ],
+        private: false,
+        anonymous: surveyData.surveyAnonymous,
+        completion_time: null,
+        completion_by_person: null,
+        needed_votes: null,
+        start_date: new Date().toISOString(),
+        end_date: null,
+        questions_count: Object.keys(forms).length,
+        questions: Object.entries(forms).map(([key, value]) => ({
+          id: (Number(key)+1).toString(),
+          number: Number(key)+1,
+          type: value.type,
+          text: value.question,
+          hint: "hinthint"
+        })),
       },
     };
 
-    await fetch("localhost:8000/surveys", {
+    await fetch(API_HOST_URL + "/surveys", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(SURVEY),
+      body: JSON.stringify(new_survey),
     });
   };
 
