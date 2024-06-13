@@ -9,34 +9,24 @@ import { motion } from "framer-motion";
 
 const data = [
   {
-    name: "ПИ",
-    img: `..//images/1.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
+    name: "ПИ/б-20",
+    img: `..//images/pi.jpg`,
+    review: `Институт информационных технологий. Кафедра «Информационные системы». Профиль: Геоинформационные технологии. Код:09.03.03. Курируемая группа.  `,
   },
   {
-    name: "ИС",
-    img: `..//images/2.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
+    name: "ИВТ/б-20",
+    img: `..//images/is2.jpg`,
+    review: `Институт информационных технологий. Кафедра «Информационные технологии и компьютерные системы. Профиль: Высокопроизводительные вычислительные системы. Код:09.04.01  `,
   },
   {
-    name: "ИВТ",
-    img: `..//images/3.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
+    name: "ИС/б-20",
+    img: `..//images/ivt.jpg`,
+    review: `Институт информационных технологий. Выпускающая кафедра «Информационные системы». Профиль: Интеллектуальные информационные системы. Код:09.04.02.  `,
   },
   {
-    name: "ПИЗДЕСЬ",
-    img: `..//images/1.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
-  },
-  {
-    name: "ПИЗДЕСЬ",
-    img: `..//images/2.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
-  },
-  {
-    name: "ПИЗДЕСЬ",
-    img: `..//images/3.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
+    name: "ИС/б-21",
+    img: `..//images/is.jpg`,
+    review: `Институт информационных технологий. Кафедра «Информационные системы». Профиль: Интеллектуальные веб-ориентированные информационные системы и технологии. Код:09.03.02.  `,
   },
 ];
 

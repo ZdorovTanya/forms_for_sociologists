@@ -18,9 +18,9 @@ import { IoSettingsSharp } from "react-icons/io5";
 const info = [
   {
     id: "0",
-    name: "Команда Шашлыки",
-    img: `..//images/4.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis`,
+    name: "ПИ/б-20",
+    img: `..//images/pi.jpg`,
+    review: `Институт информационных технологий. Кафедра «Информационные системы». Профиль: Геоинформационные технологии. Код:09.03.03. Курируемая группа.`,
     date: "06.06.2024",
   },
 ];
@@ -28,72 +28,60 @@ const info = [
 const person = [
   {
     id: "0",
-    name: "Василиса Иванова",
-    img: `..//images/4.jpg`,
-    review: `Lorem ipsum`,
+    name: "Ксения Борисовна Соколова",
+    img: `..//images/kurator.jpg`,
+    review: `Куратор`,
     role: "",
-    email: "student.@mail.ru",
+    email: "Sokolova.ksenia@mail.ru",
   },
   {
     id: "1",
-    name: "Татьяна Васильева",
-    img: `..//images/5.jpg`,
-    review: `Lorem ipsum`,
+    name: "Григорьев Вячеслав Константинович",
+    img: `..//images/slavik.jpg`,
+    review: `Староста 1`,
     role: "",
-    email: "student.@mail.ru",
+    email: "grenebris.slavs@mail.ru",
   },
   {
     id: "2",
-    name: "Лариса Гузеева",
-    img: `..//images/6.jpg`,
-    review: `Lorem ipsum`,
+    name: "Здоровило Татьяна Андреевна",
+    img: `..//images/tanya.jpg`,
+    review: `Староста 2`,
     role: "",
-    email: "student.@mail.ru",
+    email: "zdorovilo.tanya@mail.ru",
   },
 ];
 
 const team = [
   {
     id: "0",
-    name: "Пишки",
-    img: `..//images/1.jpg`,
-    review: `Геоинформационные системы`,
+    name: "ПИ/б-20-1-о",
+    img: `..//images/pi1.jpg`,
+    review: `Первая подгруппа. Староста: Григорьев Вячеслав Константинович.`,
   },
   {
     id: "1",
-    name: "Исы",
-    img: `..//images/2.jpg`,
-    review: `Lorem ipsum`,
-  },
-  {
-    id: "2",
-    name: "Пины",
-    img: `..//images/3.jpg`,
-    review: `Lorem ipsum`,
-  },
-  {
-    id: "3",
-    name: "Ивт",
-    img: `..//images/3.jpg`,
-    review: `Lorem ipsum`,
+    name: "ПИ/б-20-2-о",
+    img: `..//images/pi2.jpg`,
+    review: `Вторая подгруппа. Староста: Здоровило Татьяна Андреевна.`,
   },
 ];
 
 const team_survey = [
   {
-    img: `..//images/7.jpg`,
-    name: "Как привить правильные привычки",
-    review: `Насколько тяжело вставать по утрам и вести активный образ жизни`,
+    img: `..//images/subbotnik.jpg`,
+    name: "Субботник 24 апреля",
+    review: `Организационные вопросы. Распределение зон работы, время сборов.`,
   },
   {
-    img: `..//images/8.jpg`,
-    name: "Опрос 2",
-    review: `Как начать регулярно заниматься спортом`,
+    img: `..//images/practica.jpg`,
+    name: "Летняя практика",
+    review: `Как прошла ваша трудовая практика. Впечатления от компаний и дальнейшее трудоустройство.`,
   },
   {
-    img: `..//images/9.jpg`,
-    name: "Как пить больше воды",
-    review: `Сколько пить воды и почему это так важно`,
+    img: `..//images/volonter.jpg`,
+    name: "День волонтера",
+    review: `Примите участвие в помощи пенсионерам и нуждающимся гражданам.`,
   },
 ];
 
@@ -136,7 +124,7 @@ export default function OneTeam() {
         {showImg && <EditUserImage handleEditImgHide={handleEditImgHide} />}
         <div className={styles.team_item}>
           <div href="" className={styles.team_image}>
-            <img src="./../../../..//images/2.jpg" alt="" className="" />
+            <img src="./../../../..//images/pi.jpg" alt="" className="" />
             <CiEdit className={styles.edit_foto} onClick={handleEditImgShow} />
             {/* <FaTrash className={styles.delete_foto} /> */}
           </div>
@@ -238,7 +226,7 @@ export default function OneTeam() {
               <abbr title="Только прохождение опроса ">читателя</abbr> для
               отдельного участника или целой группы.
             </h3>
-            <NavLink to="/newGroup">
+            <NavLink to="/newGroup" className="mt-6">
               <Button text={"Создать группу"} />
             </NavLink>
           </div>
@@ -286,7 +274,9 @@ export default function OneTeam() {
         <div className={styles.team_survey}>
           <div className={styles.team_title}>
             <h2>Опросы команды</h2>
-            <Button text={"Создать опрос"} />
+            <NavLink to="/surveys">
+              <Button text={"Создать опрос"} />
+            </NavLink>
           </div>
 
           <div className={styles.survey_items}>

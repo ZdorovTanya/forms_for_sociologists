@@ -6,11 +6,11 @@ import UserHeader from "../../Account/UserHeader";
 import styles from "./SurveyLink.module.scss";
 import Button from "../../Account/Button";
 
-const data = [
+const data = [ 
   {
-    img: `..//images/7.jpg`,
-    name: "Как привить правильные привычки",
-    review: `Насколько тяжело вставать по утрам и вести активный образ жизни`,
+    img: `..//images/volonter.jpg`,
+    name: "День волонтера",
+    review: `Примите участвие в помощи пенсионерам и нуждающимся гражданам.`,
   },
 ];
 

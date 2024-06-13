@@ -10,10 +10,10 @@ import { ImExit } from "react-icons/im";
 const info = [
   {
     id: "0",
-    name: "Татьяна Андреевна Здоровило",
-    img: "./../../../..//images/15.jpg",
-    email: `zdorovilo.tanya@mail.ru`,
-    birth: `16.03.2003`,
+    name: "Ксения Борисовна Соколова",
+    img: "./../../../..//images/kurator2.jpg",
+    email: `Sokolova.ksenia@mail.ru`,
+    birth: `10.03.1983`,
     data: `15.02.2024`,
     gender: "male",
   },

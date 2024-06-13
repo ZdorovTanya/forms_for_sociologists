@@ -13,9 +13,9 @@ export default function SurveyHome() {
         <SurveyHomeCard />
       </div>
       <div className={styles.survey}>
-        <h2 className={styles.survey_header}>Все опросы</h2>
-        {/* <UserSurvey /> */}
-        <SurveysList />
+        {/* <h2 className={styles.survey_header}>Все опросы</h2> */}
+        <UserSurvey />
+        {/* <SurveysList /> */}
       </div>
     </div>
   );

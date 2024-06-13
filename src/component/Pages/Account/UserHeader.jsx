@@ -14,14 +14,18 @@ export default function UserHeader() {
           </div>
         </NavLink>
 
-        {/* <NavLink to="/newTeam" className={styles.links}>
-          Создать команду
-        </NavLink> */}
+    
         <NavLink to="/surveys" className={styles.links}>
+          Все опросы
+        </NavLink>
+        <NavLink to="/survey" className={styles.links}>
           Создать опрос
         </NavLink>
         <NavLink to="/allTeam" className={styles.links}>
           Все команды
+        </NavLink>
+        <NavLink to="/newTeam" className={styles.links}>
+          Создать команду
         </NavLink>
 
         <div className="flex items-center">

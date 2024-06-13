@@ -10,6 +10,8 @@ import { useSurveyStore } from "../../CreateSurvey/useSurveyStore";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { BsFileEarmarkPdf } from "react-icons/bs";
 import { BsFiletypeXml } from "react-icons/bs";
+import { BsFiletypeXlsx } from "react-icons/bs";
+import { SiYaml } from "react-icons/si";
 
 import {
   XAxis,
@@ -256,14 +258,16 @@ export default function SurveyResult() {
             <div className={styles.icon}>
               <BsFiletypeCsv size="50px" color="#57AC11" />
               <BsFiletypeXml size="50px" color="#2E6105" />
+              <BsFiletypeXlsx size="50px" color="#5CA82A"/>
+              <SiYaml size="50px" />
             </div>
           </div>
-          <div className={styles.svod}>
+          {/* <div className={styles.svod}>
             <h3 className={styles.icon_title}>Сводные результаты</h3>
             <div className={styles.icon}>
               <BsFileEarmarkPdf size="50px" color="#E40716" />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.answer_grid}>

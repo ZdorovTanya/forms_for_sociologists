@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 export default function NewTeam() {
   const navigate = useNavigate();
   const createGroup = () => {
-
     const group_name = document.getElementById("name").value;
     const jsn = {
       group: {
@@ -37,10 +36,7 @@ export default function NewTeam() {
     <div className={styles.wrapper}>
       <UserHeader />
 
-      <form
-        id="new_team"
-        className={styles.form}
-      >
+      <form id="new_team" className={styles.form}>
         <div className={styles.left}>
           <Uploader />
         </div>
@@ -53,7 +49,7 @@ export default function NewTeam() {
               name="group[name]"
               id="name"
               placeholder="Название команды"
-              value="12341234132"
+              // value="12341234132"
               required
               autofocus
             />
@@ -66,11 +62,10 @@ export default function NewTeam() {
               placeholder="Введите описание команды"
             ></textarea>
           </div>
-
         </div>
       </form>
 
-      <button onClick={createGroup}>
+      <button className="ml-72" onClick={createGroup}>
         <Button text={"Создать команду"} />
       </button>
 
