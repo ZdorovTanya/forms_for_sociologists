@@ -4,16 +4,41 @@ import styles from "./NewTeam.module.scss";
 import Button from "./Button";
 import Uploader from "./../Account/component/Uploader";
 import AddForm from "./add/AddForm";
+import { API_HOST_URL } from "../../../lib/constants";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function NewTeam() {
+  const navigate = useNavigate();
+  const createGroup = () => {
+
+    const group_name = document.getElementById("name").value;
+    const jsn = {
+      group: {
+        name: group_name,
+      },
+    };
+
+    axios
+      .post(API_HOST_URL + "/groups", jsn)
+      .then(function (res) {
+        // navigate("/groups/" + res.data.data.id);
+        navigate("/oneTeam");
+      })
+      .catch(function (err) {
+        console.log(err);
+        return false;
+      });
+
+    navigate("/newTeam");
+  };
+
   return (
     <div className={styles.wrapper}>
       <UserHeader />
 
       <form
         id="new_team"
-        action="/apply/"
-        method="POST"
         className={styles.form}
       >
         <div className={styles.left}>
@@ -25,9 +50,10 @@ export default function NewTeam() {
             <input
               className={styles.team_name}
               type="text"
-              name="name"
+              name="group[name]"
               id="name"
               placeholder="Название команды"
+              value="12341234132"
               required
               autofocus
             />
@@ -41,11 +67,12 @@ export default function NewTeam() {
             ></textarea>
           </div>
 
-          <button type="submit">
-            <Button text={"Создать команду"} />
-          </button>
         </div>
       </form>
+
+      <button onClick={createGroup}>
+        <Button text={"Создать команду"} />
+      </button>
 
       <h2 className={styles.title}>Добавление участника</h2>
       <AddForm />
